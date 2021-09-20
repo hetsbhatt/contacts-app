@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/1c9ad4b785.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <div class="box" id="heading">
+        <h1>
+            Contacts App
+        </h1>
+    </div>
+
+
+
+    <div class="add-new-contact">
+
+        <h2>Add New Contact Details</h2>
+        <form action="/" method="POST">
+            <!-- <input type="file" name="photo" placeholder="photo" autocomplete="off" required> -->
+            <input type="text" name="fName" placeholder="First Name" autocomplete="off" required>
+            <input type="text" name="lName" placeholder="Last Name" autocomplete="off" required>
+            <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+            <input type="tel" name="phone" placeholder="Number" autocomplete="off" required>
+            <button id="add" type="submit" name="add">+</button>
+
+        </form>
+    </div>
+
+    <div class="contact-details">
+
+        <% for(let i=0; i<contactArr.length; i++){ %>
+            <div class="card">
+
+                <div class="container">
+
+
+                    <p>
+                        <% for(let j=0; j<contactArr[i].length; j++){ %>
+
+                            <%= contactArr[i][j] %><br>
+                                <% } %>
+
+                    </p>
+                    <button type="submit" name="delete" id="delete">X</button><br>
+                    <button id="edit" type="submit" name="edit"><i class="far fa-edit"></i></button>
+
+                </div>
+
+            </div>
+            <% } %>
+
+    </div>
+</body>
+<footer id="footer">
+    Copyright 2021 Het Bhatt
+</footer>
+
+</html>
